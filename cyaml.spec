@@ -47,10 +47,10 @@ find %{buildroot} -type f -name "*.la" -delete -print
 
 
 %files -n %{libname}
-%{_libdir}/libcyaml.so.*
+%{_libdir}/%{lib}cyaml.so.*
 
 %files %{develname}
 %{_includedir}/*
-%{_libdir}/libcyaml.a
-%{_libdir}/pkgconfig/libcyaml.pc
-%{_libdir}/libcyaml.so
+%{_libdir}/%{lib}cyaml.a
+%{_libdir}/pkgconfig/%{lib}cyaml.pc
+%{_libdir}/%{lib}cyaml.so
