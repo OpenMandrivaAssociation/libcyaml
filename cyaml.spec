@@ -1,31 +1,15 @@
-#
-# spec file for package libcyaml
-#
-# Copyright (c) 2020 SUSE LLC
-#
-# All modifications and additions to the file contributed by third parties
-# remain the property of their copyright owners, unless otherwise agreed
-# upon. The license for this file, and modifications and additions to the
-# file, is the same license as for the pristine package itself (unless the
-# license for the pristine package is not an Open Source License, in which
-# case the license is the MIT License). An "Open Source License" is a
-# license that conforms to the Open Source Definition (Version 1.9)
-# published by the Open Source Initiative.
+%define oname libcyaml
 
-# Please submit bugfixes or comments via https://bugs.opensuse.org/
-#
-
-
-Name:           libcyaml
+Name:           cyaml
 Version:        1.1.0
-Release:        0
+Release:        1
 Summary:        LibCYAML is a C library for reading and writing structured YAML documents
 License:        ISC
 Group:          Development/Libraries/C and C++
-URL:            https://pyyaml.org/wiki/LibYAML
-Source:         libcyaml-%{version}.tar.gz
+URL:            https://github.com/tlsa/libcyaml
+Source:         https://github.com/tlsa/libcyaml/archive/v%{version}/%{oname}-%{version}.tar.gz
 BuildRequires:  pkgconfig
-BuildRequires:  libyaml-devel
+BuildRequires:  pkgconfig(yaml-0.1)
 
 %description
 LibCYAML is a C library for reading and writing structured YAML documents
@@ -72,5 +56,3 @@ find %{buildroot} -type f -name "*.la" -delete -print
 %{_libdir}/libcyaml.a
 %{_libdir}/pkgconfig/libcyaml.pc
 %{_libdir}/libcyaml.so
-
-%changelog
