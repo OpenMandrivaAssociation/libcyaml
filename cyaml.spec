@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 %define oname libcyaml
 
 Name:           cyaml
