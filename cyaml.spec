@@ -1,8 +1,9 @@
 %global debug_package %{nil}
 
 #define oname libcyaml
+%define major 0
 
-%define libname		%mklibname cyaml
+%define libname		%mklibname cyaml %{major}
 %define develname	%mklibname cyaml -d
 
 Name:           libcyaml
