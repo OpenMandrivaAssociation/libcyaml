@@ -1,36 +1,37 @@
 %global debug_package %{nil}
 
-%define oname libcyaml
+#define oname libcyaml
 
-Name:           cyaml
+%define libname		%mklibname cyaml %{major}
+%define develname	%mklibname cyaml -d
+
+Name:           libcyaml
 Version:        1.1.0
 Release:        1
 Summary:        LibCYAML is a C library for reading and writing structured YAML documents
 License:        ISC
 Group:          Development/Libraries/C and C++
 URL:            https://github.com/tlsa/libcyaml
-Source:         https://github.com/tlsa/libcyaml/archive/v%{version}/%{oname}-%{version}.tar.gz
+Source:         https://github.com/tlsa/libcyaml/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(yaml-0.1)
 
 %description
 LibCYAML is a C library for reading and writing structured YAML documents
 
-%define lib_name libcyaml1
-
-%package -n %{lib_name}
+%package -n %{libname}
 Summary:        LibCYAML is a C library for reading and writing structured YAML documents
 Group:          System/Libraries
 
-%description -n %{lib_name}
+%description -n %{libname}
 LibCYAML is a C library for reading and writing structured YAML documents.
 
-%package devel
+%package %{develname}
 Summary:        Development files for libcyaml
 Group:          Development/Libraries/C and C++
-Requires:       %{lib_name} = %{version}
+Requires:       %{libname} = %{version}
 
-%description devel
+%description %{develname}
 This package holds the development files for libcyaml,
 C library for reading and writing structured YAML documents.
 
@@ -41,14 +42,14 @@ C library for reading and writing structured YAML documents.
 %make_build
 
 %install
-%make_install PREFIX=%{_prefix} LIBDIR=lib64
+%make_install PREFIX=%{_prefix}
 find %{buildroot} -type f -name "*.la" -delete -print
 
 
-%files -n %{lib_name}
+%files -n %{libname}
 %{_libdir}/libcyaml.so.*
 
-%files devel
+%files %{develname}
 %{_includedir}/*
 %{_libdir}/libcyaml.a
 %{_libdir}/pkgconfig/libcyaml.pc
