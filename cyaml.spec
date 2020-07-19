@@ -42,11 +42,6 @@ C library for reading and writing structured YAML documents.
 %make_install PREFIX=%{_prefix} LIBDIR=lib64
 find %{buildroot} -type f -name "*.la" -delete -print
 
-%check
-%make_build check
-
-%post   -n %{lib_name} -p /sbin/ldconfig
-%postun -n %{lib_name} -p /sbin/ldconfig
 
 %files -n %{lib_name}
 %{_libdir}/libcyaml.so.*
