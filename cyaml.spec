@@ -2,7 +2,7 @@
 
 #define oname libcyaml
 
-%define libname		%mklibname cyaml %{major}
+%define libname		%mklibname cyaml
 %define develname	%mklibname cyaml -d
 
 Name:           libcyaml
@@ -47,10 +47,10 @@ find %{buildroot} -type f -name "*.la" -delete -print
 
 
 %files -n %{libname}
-%{_libdir}/%{lib}cyaml.so.*
+#{_libdir}/%{lib}cyaml.so.*
 
 %files %{develname}
 %{_includedir}/*
-%{_libdir}/%{lib}cyaml.a
-%{_libdir}/pkgconfig/%{lib}cyaml.pc
-%{_libdir}/%{lib}cyaml.so
+#{_libdir}/%{lib}cyaml.a
+#{_libdir}/pkgconfig/%{lib}cyaml.pc
+#{_libdir}/%{lib}cyaml.so
