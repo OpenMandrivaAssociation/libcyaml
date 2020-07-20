@@ -4,7 +4,7 @@
 %define major 0
 
 %define libname		%mklibname cyaml %{major}
-#define develname	cyaml -d
+%define develname	%mklibname cyaml -d
 
 Name:           libcyaml
 Version:        1.1.0
