@@ -4,7 +4,7 @@
 %define major 0
 
 %define libname		%mklibname cyaml %{major}
-%define develname	%mklibname cyaml
+%define develname	%mklibname cyaml -d
 
 Name:           libcyaml
 Version:        1.1.0
@@ -27,12 +27,12 @@ Group:          System/Libraries
 %description -n %{libname}
 LibCYAML is a C library for reading and writing structured YAML documents.
 
-%package %{develname}
+%package -n %{develname}
 Summary:        Development files for libcyaml
 Group:          Development/Libraries/C and C++
 Requires:       %{libname} = %{version}
 
-%description %{develname}
+%description -n %{develname}
 This package holds the development files for libcyaml,
 C library for reading and writing structured YAML documents.
 
