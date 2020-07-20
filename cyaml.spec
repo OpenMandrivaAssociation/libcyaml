@@ -42,7 +42,7 @@ C library for reading and writing structured YAML documents.
 %make_build
 
 %install
-%ifnarch %{ix86} %armv7hnl
+%ifnarch %{ix86} %{arm}
 %make_install PREFIX=%{_prefix} LIBDIR=lib64
 %else
 %make_install PREFIX=%{_prefix}
