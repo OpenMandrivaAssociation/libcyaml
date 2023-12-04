@@ -6,7 +6,7 @@
 %define develname %mklibname cyaml -d
 
 Name:		libcyaml
-Version:	1.3.1
+Version:	1.4.1
 Release:	1
 Summary:	LibCYAML is a C library for reading and writing structured YAML documents
 License:	ISC
