@@ -13,6 +13,7 @@ License:	ISC
 Group:		Development/Libraries/C and C++
 URL:		https://github.com/tlsa/libcyaml
 Source:		https://github.com/tlsa/libcyaml/archive/v%{version}/%{name}-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	pkgconfig(yaml-0.1)
 
 %description
